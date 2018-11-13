@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>How To Get Form Data</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous">
+
+		<style>
+
+			body {
+				padding-top: 50px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<div class="container">
+
+			<p class="text-center">The wall is going to be <strong>4</strong> feet high
+				and <strong>12</strong> feet wide.</p>
+
+			<p class="text-center">With bricks that are <strong>4</strong> inches high
+				and <strong>8</strong> inches wide, it will take <strong>x</strong>
+				number of bricks.</p>
+
+			<hr/>
+
+			<h2 class="text-center">Let's change it up</h2>
+
+			<form>
+
+				<div class="form-group">
+					<label>Brick Width</label>
+					<input type="text" class="form-control" name="brick_width"
+						placeholder="Enter Width"/>
+				</div>
+
+				<div class="form-group">
+					<label>Brick Height</label>
+					<input type="text" class="form-control" name="brick_height"
+						placeholder="Enter Height"/>
+				</div>
+
+				<button class="btn btn-default">
+					Recalculate
+				</button>
+
+			</form>
+
+		</div>
+
+	</body>
+</html>
