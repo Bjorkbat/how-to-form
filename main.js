@@ -2,6 +2,12 @@ var form = document.getElementById("brickForm");
 
 form.addEventListener('submit', function(event) {
 
+		// Set error paragraphs back to hidden
+		document.getElementById("brickWidthError").hidden = true;
+		document.getElementById("brickHeightError").hidden = true;
+		document.getElementById("wallWidthError").hidden = true;
+		document.getElementById("wallHeightError").hidden = true;
+
 		var inchesInFeet = 12;
 
 		event.preventDefault();
@@ -10,9 +16,38 @@ form.addEventListener('submit', function(event) {
 		var brickWidth = document.getElementById("brickWidth").value;
 		var brickHeight = document.getElementById("brickHeight").value;
 
+		if ( isNaN(brickWidth) ) {
+			// Brick width is Not a Number.  Unhide the appropriate error text and
+			// abort
+			document.getElementById("brickWidthError").hidden = false;
+			return;
+		}
+
+		if ( isNaN(brickHeight) ) {
+			// Brick height is Not A Number.  Unhide the appropriate error text and
+			// abort
+			document.getElementById("brickHeightError").hidden = false;
+			return;
+		}
+
 		// Grab the dimensions of the wall (and convert to inches)
 		var widthOfWallFeet = document.getElementById("brickWallWidth").value
 		var heightOfWallFeet = document.getElementById("brickWallHeight").value;
+
+		if ( isNaN(widthOfWallFeet) ) {
+			// Wall width is Not a Numnber.  Unhide the appropriate error text
+			// and abort
+			document.getElementById("wallWidthError").hidden = false;
+			return;
+		}
+
+		if ( isNaN(heightOfWallFeet) ) {
+			// Wall height is Not a Number.  Unhide the appropriate error text and
+			// abort
+			document.getElementById("wallHeightError").hidden = false;
+			return;
+		}
+
 		// Convert
 		var widthOfWall = widthOfWallFeet * inchesInFeet;
 		var heightOfWall = heightOfWallFeet * inchesInFeet;
